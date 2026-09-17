@@ -1,0 +1,18 @@
+{{ $filter := "all" }}
+<section class="page-header container">
+  <p class="eyebrow">{{ i18n "page.all" }}</p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  {{ with .Content }}<div class="page-header-content">{{ . }}</div>{{ end }}
+  {{ partial "collection-nav.html" . }}
+</section>
+
+<section class="section container">
+  <div class="post-list" data-content-list data-initial-filter="{{ $filter }}">
+    {{ range .Site.RegularPages.ByDate.Reverse }}
+      {{ if or (eq .Section "docs") (eq .Section "comparisons") (eq .Section "concepts") }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

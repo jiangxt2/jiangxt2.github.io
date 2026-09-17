@@ -1,52 +1,33 @@
 [nav]
   [nav.home]
     other = 'Home'
-  [nav.posts]
-    other = 'Articles'
-  [nav.demos]
-    other = 'Trials'
-  [nav.about]
-    other = 'About'
-
-[hero]
-  [hero.eyebrow]
-    other = 'EASTERN MYTH · TECH NOTES'
-  [hero.chapter]
-    other = 'CHAPTER I · MOUNTAIN GATE'
-  [hero.read]
-    other = 'Read articles'
-  [hero.demos]
-    other = 'Explore demos'
-  [hero.stack]
-    other = 'ROOTS · TECH STACK'
-  [hero.stackDescription]
-    other = 'Markdown-led content, static-first delivery, automated publishing.'
-
-[latest]
-  [latest.eyebrow]
-    other = 'LATEST NOTES'
-  [latest.title]
-    other = 'Latest articles'
-
-[demos]
-  [demos.eyebrow]
-    other = 'RUNNABLE WEB TRIALS'
-  [demos.title]
-    other = 'Web trials'
-  [demos.vanillaTitle]
-    other = 'Vanilla HTML + JavaScript'
-  [demos.vanillaDescription]
-    other = 'A static page that runs without a framework.'
-  [demos.vueTitle]
-    other = 'Vue 3 + Vite'
-  [demos.vueDescription]
-    other = 'A compiled single-page Vue demo.'
 
 [page]
   [page.articleIndex]
     other = 'ARTICLE INDEX'
-  [page.collection]
-    other = 'COLLECTION'
+  [page.docs]
+    other = 'TECHNICAL DOCS'
+  [page.comparisons]
+    other = 'PROJECT COMPARISONS'
+  [page.concepts]
+    other = 'CORE CONCEPTS'
+  [page.all]
+    other = 'ALL KNOWLEDGE'
+
+[collection]
+  [collection.navigation]
+    other = 'CONTENT TYPES'
+  [collection.all]
+    other = 'All'
+  [collection.docs]
+    other = 'Technical docs'
+  [collection.comparisons]
+    other = 'Cross-project compare'
+  [collection.concepts]
+    other = 'Core concepts'
+
+[page.collection]
+  other = 'COLLECTION'
 
 [common]
   [common.viewAll]
@@ -61,6 +42,14 @@
 [language]
   [language.switcher]
     other = 'Language switcher'
+
+[background]
+  [background.switcher]
+    other = 'Scenes'
+  [background.mountains]
+    other = 'Mountain Gate'
+  [background.atlas]
+    other = 'Portraits'
 
 [footer]
   [footer.builtWith]

@@ -1,15 +1,29 @@
 {{ define "main" }}
 <section class="page-header container">
-  <p class="eyebrow">{{ if eq .Section "posts" }}{{ i18n "page.articleIndex" }}{{ else }}{{ i18n "page.collection" }}{{ end }}</p>
+  <p class="eyebrow">
+    {{ if eq .Section "posts" }}{{ i18n "page.articleIndex" }}
+    {{ else if eq .Section "docs" }}{{ i18n "page.docs" }}
+    {{ else if eq .Section "comparisons" }}{{ i18n "page.comparisons" }}
+    {{ else if eq .Section "concepts" }}{{ i18n "page.concepts" }}
+    {{ else }}{{ i18n "page.collection" }}{{ end }}
+  </p>
   <h1>{{ .Title }}</h1>
   {{ with .Description }}<p>{{ . }}</p>{{ end }}
   {{ with .Content }}<div class="page-header-content">{{ . }}</div>{{ end }}
+  {{ if in (slice "docs" "comparisons" "concepts") .Section }}
+    {{ partial "collection-nav.html" . }}
+  {{ end }}
 </section>
 
 <section class="section container">
-  <div class="post-list">
-    {{ range .Pages.ByDate.Reverse }}
-      {{ partial "post-card.html" . }}
+  {{ $pages := .Pages.ByDate.Reverse }}
+  {{ if in (slice "docs" "comparisons" "concepts") .Section }}
+    {{ $pages = where .Site.RegularPages "Section" "in" (slice "docs" "comparisons" "concepts") }}
+    {{ $pages = $pages.ByDate.Reverse }}
+  {{ end }}
+  <div class="post-list" data-content-list data-initial-filter="{{ .Section }}">
+    {{ if gt (len $pages) 0 }}
+      {{ range $pages }}{{ partial "post-card.html" . }}{{ end }}
     {{ else }}
       <p class="empty-state">{{ i18n "common.empty" }}</p>
     {{ end }}

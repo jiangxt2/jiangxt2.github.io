@@ -1,52 +1,33 @@
 [nav]
   [nav.home]
     other = '首页'
-  [nav.posts]
-    other = '文章'
-  [nav.demos]
-    other = '试炼场'
-  [nav.about]
-    other = '关于'
-
-[hero]
-  [hero.eyebrow]
-    other = '东方神话 · 技术札记'
-  [hero.chapter]
-    other = '卷一 · 山门'
-  [hero.read]
-    other = '阅读文章'
-  [hero.demos]
-    other = '浏览 Demo'
-  [hero.stack]
-    other = '根器 · 技术栈'
-  [hero.stackDescription]
-    other = 'Markdown 驱动内容，静态文件优先，自动化发布。'
-
-[latest]
-  [latest.eyebrow]
-    other = '最新札记'
-  [latest.title]
-    other = '最新文章'
-
-[demos]
-  [demos.eyebrow]
-    other = '可运行的网页试炼'
-  [demos.title]
-    other = '网页试炼场'
-  [demos.vanillaTitle]
-    other = '原生 HTML + JavaScript'
-  [demos.vanillaDescription]
-    other = '无需框架，直接运行的静态网页。'
-  [demos.vueTitle]
-    other = 'Vue 3 + Vite'
-  [demos.vueDescription]
-    other = '构建后的 Vue 单页 Demo。'
 
 [page]
   [page.articleIndex]
     other = '文章索引'
-  [page.collection]
-    other = '内容集合'
+  [page.docs]
+    other = '技术文档'
+  [page.comparisons]
+    other = '项目对比'
+  [page.concepts]
+    other = '概念科普'
+  [page.all]
+    other = '全部内容'
+
+[collection]
+  [collection.navigation]
+    other = '内容分类'
+  [collection.all]
+    other = '全部'
+  [collection.docs]
+    other = '技术文档'
+  [collection.comparisons]
+    other = '跨项目对比'
+  [collection.concepts]
+    other = '概念科普'
+
+[page.collection]
+  other = '内容集合'
 
 [common]
   [common.viewAll]
@@ -61,6 +42,14 @@
 [language]
   [language.switcher]
     other = '语言切换'
+
+[background]
+  [background.switcher]
+    other = '换景'
+  [background.mountains]
+    other = '山门'
+  [background.atlas]
+    other = '影神图'
 
 [footer]
   [footer.builtWith]

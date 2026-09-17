@@ -1,20 +1,32 @@
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="{{ "/" | relURL }}" aria-label="返回首页">
+    <a class="brand" href="{{ .Site.Home.RelPermalink }}" aria-label="{{ i18n "nav.home" }}">
       <span class="brand-mark" aria-hidden="true">⌘</span>
       <span>{{ .Site.Title }}</span>
     </a>
-    <nav class="site-nav" aria-label="主导航">
-      <a href="{{ .Site.Home.RelPermalink }}" class="{{ if .IsHome }}is-active{{ end }}">{{ i18n "nav.home" }}</a>
-      <a href="{{ "posts/" | relLangURL }}" class="{{ if eq .Section "posts" }}is-active{{ end }}">{{ i18n "nav.posts" }}</a>
-      <a href="{{ "demos/" | relLangURL }}" class="{{ if eq .Section "demos" }}is-active{{ end }}">{{ i18n "nav.demos" }}</a>
-      <a href="{{ "about/" | relLangURL }}" class="{{ if eq .Section "about" }}is-active{{ end }}">{{ i18n "nav.about" }}</a>
-    </nav>
-    <div class="language-switcher" role="group" aria-label="{{ i18n "language.switcher" }}">
-      <a class="language-link is-active" href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ .Language.Label }}</a>
+    {{ $zh := .Site.Home }}
+    {{ $en := .Site.Home }}
+    {{ if eq .Language.Lang "zh-cn" }}
+      {{ $zh = . }}
       {{ range .Translations }}
-        <a class="language-link" href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ .Language.Label }}</a>
+        {{ if eq .Language.Lang "en" }}{{ $en = . }}{{ end }}
       {{ end }}
+    {{ else }}
+      {{ $en = . }}
+      {{ range .Translations }}
+        {{ if eq .Language.Lang "zh-cn" }}{{ $zh = . }}{{ end }}
+      {{ end }}
+    {{ end }}
+    <div class="header-actions">
+      <button class="background-switcher" type="button" data-background-toggle aria-label="{{ i18n "background.switcher" }}" data-mountains-label="{{ i18n "background.mountains" }}" data-atlas-label="{{ i18n "background.atlas" }}">
+        <span class="background-switcher-icon" aria-hidden="true">◐</span>
+        <span>{{ i18n "background.switcher" }}</span>
+        <span class="background-switcher-name" data-background-label>{{ i18n "background.mountains" }}</span>
+      </button>
+      <div class="language-switcher" role="group" aria-label="{{ i18n "language.switcher" }}">
+        <a class="language-link{{ if eq .Language.Lang "zh-cn" }} is-active{{ end }}" href="{{ $zh.RelPermalink }}" lang="zh-cn">中文</a>
+        <a class="language-link{{ if eq .Language.Lang "en" }} is-active{{ end }}" href="{{ $en.RelPermalink }}" lang="en">English</a>
+      </div>
     </div>
   </div>
 </header>

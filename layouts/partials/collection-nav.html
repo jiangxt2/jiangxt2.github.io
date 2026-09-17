@@ -1,0 +1,10 @@
+<nav class="collection-nav" aria-label="{{ i18n "collection.navigation" }}">
+  <span class="collection-nav-label">{{ i18n "collection.navigation" }}</span>
+  <div class="collection-nav-links" role="group">
+    {{ $isAll := or (eq .Kind "home") (eq .Section "knowledge") }}
+    <button class="collection-nav-link{{ if $isAll }} is-active{{ end }}" type="button" data-content-filter="all" aria-pressed="{{ if $isAll }}true{{ else }}false{{ end }}">{{ i18n "collection.all" }}</button>
+    <button class="collection-nav-link{{ if eq .Section "docs" }} is-active{{ end }}" type="button" data-content-filter="docs" aria-pressed="{{ if eq .Section "docs" }}true{{ else }}false{{ end }}">{{ i18n "collection.docs" }}</button>
+    <button class="collection-nav-link{{ if eq .Section "comparisons" }} is-active{{ end }}" type="button" data-content-filter="comparisons" aria-pressed="{{ if eq .Section "comparisons" }}true{{ else }}false{{ end }}">{{ i18n "collection.comparisons" }}</button>
+    <button class="collection-nav-link{{ if eq .Section "concepts" }} is-active{{ end }}" type="button" data-content-filter="concepts" aria-pressed="{{ if eq .Section "concepts" }}true{{ else }}false{{ end }}">{{ i18n "collection.concepts" }}</button>
+  </div>
+</nav>

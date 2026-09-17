@@ -6,6 +6,9 @@
     <div class="article-meta">
       {{ if ne .Date.Year 1 }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>{{ end }}
       {{ with .ReadingTime }}<span>{{ . }} {{ i18n "common.minutes" }}</span>{{ end }}
+      {{ with .Params.type }}<span>{{ . }}</span>{{ end }}
+      {{ with .Params.level }}<span>{{ . }}</span>{{ end }}
+      {{ with .Params.topics }}<span>{{ delimit . " · " }}</span>{{ end }}
     </div>
     {{ with .Params.tags }}
       <div class="tag-list" aria-label="文章标签">

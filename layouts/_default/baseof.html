@@ -4,12 +4,19 @@
     {{ partial "head.html" . }}
   </head>
   {{ $background := resources.Get "images/hero-mythic-mountains.webp" }}
-  <body{{ with $background }} style="--site-background: url('{{ .RelPermalink }}')"{{ end }}>
+  {{ $portraitBackground := resources.Get "images/hero-portrait-atlas.webp" }}
+  <body data-background="mountains">
+    <div class="site-background" aria-hidden="true">
+      {{ with $background }}<img class="site-background-image site-background-image-mountains" src="{{ .RelPermalink }}" alt="" fetchpriority="high">{{ end }}
+      {{ with $portraitBackground }}<img class="site-background-image site-background-image-atlas" src="{{ .RelPermalink }}" alt="">{{ end }}
+    </div>
     <a class="skip-link" href="#main-content">跳到正文</a>
     {{ partial "site-header.html" . }}
     <main id="main-content" class="site-main">
       {{ block "main" . }}{{ end }}
     </main>
     {{ partial "site-footer.html" . }}
+    <script src="{{ "js/content-filter.js" | relURL }}" defer></script>
+    <script src="{{ "js/background-switcher.js" | relURL }}" defer></script>
   </body>
 </html>

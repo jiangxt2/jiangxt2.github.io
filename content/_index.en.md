@@ -1,8 +1,8 @@
 ---
-title: "Explore, build, and leave notes"
-description: "Notes on technology, experiments, and open source."
+title: "Technical docs"
+description: "A reusable knowledge base for data systems, distributed computing, and shared principles."
 ---
 
-This is a technical space for notes on databases, data systems, frontend experiments, and open source work.
+The site now opens directly into the knowledge base: technical docs, cross-project comparisons, and core concepts share one entry point.
 
-I like turning complex problems into small, reproducible pieces of knowledge that can be discussed and improved over time.
+The collection will grow around Spark, ClickHouse, Doris, Ray, and Daft, with reproducible experiments where conclusions need evidence.

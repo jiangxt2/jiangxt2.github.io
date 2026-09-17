@@ -33,6 +33,10 @@ posts = '/posts/:year/:month/:day/:slug/'
 [taxonomies]
 tag = 'tags'
 category = 'categories'
+topic = 'topics'
+type = 'types'
+level = 'levels'
+series = 'series'
 
 [markup]
 [markup.goldmark]
