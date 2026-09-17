@@ -6,6 +6,8 @@
 <meta name="author" content="{{ .Site.Params.author }}">
 <meta name="theme-color" content="#f7f8fa">
 <title>{{ if and .IsHome (ne .Title .Site.Title) }}{{ .Title }} · {{ .Site.Title }}{{ else }}{{ $pageTitle }}{{ end }}</title>
+<link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+<link rel="alternate icon" href="{{ "favicon.jpg" | relURL }}">
 <link rel="canonical" href="{{ .Permalink }}">
 {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
