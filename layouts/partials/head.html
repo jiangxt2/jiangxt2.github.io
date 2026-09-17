@@ -7,6 +7,10 @@
 <meta name="theme-color" content="#f7f8fa">
 <title>{{ $pageTitle }}</title>
 <link rel="canonical" href="{{ .Permalink }}">
+{{ range .Translations }}
+  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{ end }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
 {{ with resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
 {{ end }}

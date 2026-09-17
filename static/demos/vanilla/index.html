@@ -8,17 +8,24 @@
   </head>
   <body>
     <main class="demo-shell">
-      <a class="back-link" href="../../../">← 返回博客</a>
+      <div class="demo-topbar">
+        <a class="back-link" href="../../../">← <span data-i18n="back">返回博客</span></a>
+        <div class="demo-language" aria-label="Language switcher">
+          <a href="?lang=zh" data-locale="zh">中文</a>
+          <span aria-hidden="true">/</span>
+          <a href="?lang=en" data-locale="en">English</a>
+        </div>
+      </div>
       <section class="demo-panel">
-        <p class="eyebrow">VANILLA JAVASCRIPT</p>
-        <h1>原生 HTML + JavaScript</h1>
-        <p class="intro">这是一个不依赖框架的静态网页，HTML、CSS 和 JavaScript 都由 GitHub Pages 直接提供。</p>
+        <p class="eyebrow" data-i18n="eyebrow">VANILLA JAVASCRIPT</p>
+        <h1 data-i18n="title">原生 HTML + JavaScript</h1>
+        <p class="intro" data-i18n="intro">这是一个不依赖框架的静态网页，HTML、CSS 和 JavaScript 都由 GitHub Pages 直接提供。</p>
         <div class="counter-card">
           <span id="count" class="count">0</span>
-          <span class="count-label">次点击</span>
+          <span class="count-label" data-i18n="countLabel">次点击</span>
           <div class="actions">
-            <button id="decrease" type="button">减少</button>
-            <button id="increase" type="button">增加</button>
+            <button id="decrease" type="button" data-i18n="decrease">减少</button>
+            <button id="increase" type="button" data-i18n="increase">增加</button>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@
   "name": "jiangxt2-personal-site",
   "private": true,
   "scripts": {
-    "build": "hugo --gc --minify && npm run build:vue",
+    "build": "hugo --cleanDestinationDir --gc --minify && npm run build:vue",
     "build:vue": "npm run build --prefix demos/vue-counter",
     "dev:vue": "npm run dev --prefix demos/vue-counter",
     "preview": "npm run build && python3 -m http.server 1313 --directory public"

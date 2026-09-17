@@ -1,4 +1,4 @@
-# Jiangxt2 Personal Site
+# 影神图
 
 一个基于 Hugo 的个人技术站点，包含 Markdown 博客、原生 HTML/JavaScript Demo，以及 Vue 3 + Vite Demo。
 

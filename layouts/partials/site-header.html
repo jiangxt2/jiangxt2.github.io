@@ -5,10 +5,16 @@
       <span>{{ .Site.Title }}</span>
     </a>
     <nav class="site-nav" aria-label="主导航">
-      <a href="{{ "/" | relURL }}" class="{{ if .IsHome }}is-active{{ end }}">首页</a>
-      <a href="{{ "/posts/" | relURL }}" class="{{ if eq .Section "posts" }}is-active{{ end }}">文章</a>
-      <a href="{{ "/demos/" | relURL }}" class="{{ if eq .Section "demos" }}is-active{{ end }}">Demo</a>
-      <a href="{{ "/about/" | relURL }}" class="{{ if eq .Section "about" }}is-active{{ end }}">关于</a>
+      <a href="{{ .Site.Home.RelPermalink }}" class="{{ if .IsHome }}is-active{{ end }}">{{ i18n "nav.home" }}</a>
+      <a href="{{ "posts/" | relLangURL }}" class="{{ if eq .Section "posts" }}is-active{{ end }}">{{ i18n "nav.posts" }}</a>
+      <a href="{{ "demos/" | relLangURL }}" class="{{ if eq .Section "demos" }}is-active{{ end }}">{{ i18n "nav.demos" }}</a>
+      <a href="{{ "about/" | relLangURL }}" class="{{ if eq .Section "about" }}is-active{{ end }}">{{ i18n "nav.about" }}</a>
     </nav>
+    <div class="language-switcher" role="group" aria-label="{{ i18n "language.switcher" }}">
+      <a class="language-link is-active" href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ .Language.Label }}</a>
+      {{ range .Translations }}
+        <a class="language-link" href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ .Language.Label }}</a>
+      {{ end }}
+    </div>
   </div>
 </header>

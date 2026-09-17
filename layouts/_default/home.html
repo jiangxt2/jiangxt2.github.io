@@ -1,33 +1,39 @@
 {{ define "main" }}
-<section class="hero container">
+{{ $background := resources.Get "images/hero-mythic-mountains.webp" }}
+{{ $demoLang := "zh" }}
+{{ if eq .Language.Lang "en" }}{{ $demoLang = "en" }}{{ end }}
+<section class="hero"{{ with $background }} style="--hero-background: url('{{ .RelPermalink }}')"{{ end }}>
+  <div class="hero-inner">
   <div class="hero-copy">
-    <p class="eyebrow">PERSONAL TECH NOTES</p>
+    <p class="eyebrow">{{ i18n "hero.eyebrow" }}</p>
     <h1>{{ .Title }}</h1>
     <p class="hero-summary">{{ .Description }}</p>
     <div class="hero-actions">
-      <a class="button button-primary" href="{{ "/posts/" | relURL }}">阅读文章</a>
-      <a class="button button-secondary" href="{{ "/demos/" | relURL }}">浏览 Demo</a>
+      <a class="button button-primary" href="{{ "posts/" | relLangURL }}">{{ i18n "hero.read" }}</a>
+      <a class="button button-secondary" href="{{ "demos/" | relLangURL }}">{{ i18n "hero.demos" }}</a>
     </div>
   </div>
   <div class="hero-card" aria-label="站点技术栈">
-    <span class="hero-card-label">STACK</span>
+    <p class="hero-card-chapter">{{ i18n "hero.chapter" }}</p>
+    <span class="hero-card-label">{{ i18n "hero.stack" }}</span>
     <div class="stack-list">
       <span>Hugo</span>
       <span>Vue</span>
       <span>JavaScript</span>
       <span>GitHub Pages</span>
     </div>
-    <p>Markdown 驱动内容，静态文件优先，自动化发布。</p>
+    <p>{{ i18n "hero.stackDescription" }}</p>
   </div>
+</div>
 </section>
 
 <section class="section container" aria-labelledby="latest-heading">
   <div class="section-heading">
     <div>
-      <p class="eyebrow">LATEST NOTES</p>
-      <h2 id="latest-heading">最新文章</h2>
+      <p class="eyebrow">{{ i18n "latest.eyebrow" }}</p>
+      <h2 id="latest-heading">{{ i18n "latest.title" }}</h2>
     </div>
-    <a class="text-link" href="{{ "/posts/" | relURL }}">查看全部 <span aria-hidden="true">→</span></a>
+    <a class="text-link" href="{{ "posts/" | relLangURL }}">{{ i18n "common.viewAll" }} <span aria-hidden="true">→</span></a>
   </div>
   <div class="post-grid">
     {{ $posts := where .Site.RegularPages "Section" "posts" }}
@@ -41,25 +47,25 @@
   <div class="container">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">RUNNABLE PAGES</p>
-        <h2 id="demos-heading">网页实验</h2>
+        <p class="eyebrow">{{ i18n "demos.eyebrow" }}</p>
+        <h2 id="demos-heading">{{ i18n "demos.title" }}</h2>
       </div>
-      <a class="text-link" href="{{ "/demos/" | relURL }}">查看全部 <span aria-hidden="true">→</span></a>
+      <a class="text-link" href="{{ "demos/" | relLangURL }}">{{ i18n "common.viewAll" }} <span aria-hidden="true">→</span></a>
     </div>
     <div class="demo-grid">
-      <a class="demo-card" href="{{ "/demos/vanilla/" | relURL }}">
+      <a class="demo-card" href="{{ printf "demos/vanilla/?lang=%s" $demoLang | relURL }}">
         <span class="demo-icon">JS</span>
         <span class="demo-card-body">
-          <strong>原生 HTML + JavaScript</strong>
-          <span>无需框架，直接运行的静态网页。</span>
+          <strong>{{ i18n "demos.vanillaTitle" }}</strong>
+          <span>{{ i18n "demos.vanillaDescription" }}</span>
         </span>
         <span class="demo-arrow" aria-hidden="true">↗</span>
       </a>
-      <a class="demo-card" href="{{ "/demos/vue-counter/" | relURL }}">
+      <a class="demo-card" href="{{ printf "demos/vue-counter/?lang=%s" $demoLang | relURL }}">
         <span class="demo-icon demo-icon-vue">V</span>
         <span class="demo-card-body">
-          <strong>Vue 3 + Vite</strong>
-          <span>构建后的 Vue 单页 Demo。</span>
+          <strong>{{ i18n "demos.vueTitle" }}</strong>
+          <span>{{ i18n "demos.vueDescription" }}</span>
         </span>
         <span class="demo-arrow" aria-hidden="true">↗</span>
       </a>

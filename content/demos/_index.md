@@ -1,5 +1,5 @@
 ---
-title: "网页 Demo"
+title: "网页试炼场"
 description: "原生 HTML、JavaScript 和 Vue 交互示例。"
 ---
 

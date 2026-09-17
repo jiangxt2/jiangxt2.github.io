@@ -5,7 +5,7 @@
     <h1>{{ .Title }}</h1>
     <div class="article-meta">
       {{ if ne .Date.Year 1 }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>{{ end }}
-      {{ with .ReadingTime }}<span>{{ . }} 分钟阅读</span>{{ end }}
+      {{ with .ReadingTime }}<span>{{ . }} {{ i18n "common.minutes" }}</span>{{ end }}
     </div>
     {{ with .Params.tags }}
       <div class="tag-list" aria-label="文章标签">

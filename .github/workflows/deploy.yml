@@ -40,7 +40,7 @@ jobs:
         run: npm ci --prefix demos/vue-counter
 
       - name: Build Hugo site
-        run: hugo --gc --minify
+        run: hugo --cleanDestinationDir --gc --minify
 
       - name: Build Vue Demo into the Pages output
         run: npm run build --prefix demos/vue-counter

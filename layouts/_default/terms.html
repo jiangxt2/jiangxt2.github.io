@@ -8,7 +8,7 @@
     {{ range .Data.Terms.Alphabetical }}
       <a class="term-card" href="{{ .Page.RelPermalink }}">
         <strong>{{ .Page.Title }}</strong>
-        <span>{{ .Count }} 篇</span>
+        <span>{{ .Count }} {{ i18n "common.posts" }}</span>
       </a>
     {{ end }}
   </div>

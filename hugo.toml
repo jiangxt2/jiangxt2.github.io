@@ -1,17 +1,31 @@
 baseURL = 'https://jiangxt2.github.io/'
-locale = 'zh-CN'
-title = '江同学的技术笔记'
+title = '影神图'
 theme = []
 enableRobotsTXT = true
 enableGitInfo = false
+defaultContentLanguage = 'zh-cn'
+defaultContentLanguageInSubdir = false
 
 [pagination]
 pagerSize = 6
 
 [params]
-author = 'jiangxt2'
+author = '影神图'
 description = '记录技术文章、实验与开源项目。'
 tagline = '记录技术文章、实验与开源项目。'
+
+[languages]
+[languages.zh-cn]
+label = '中文'
+locale = 'zh-CN'
+title = '影神图'
+weight = 1
+
+[languages.en]
+label = 'English'
+locale = 'en-US'
+title = 'Portraits'
+weight = 2
 
 [permalinks]
 posts = '/posts/:year/:month/:day/:slug/'

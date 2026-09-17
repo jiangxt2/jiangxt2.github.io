@@ -1,8 +1,9 @@
 {{ define "main" }}
 <section class="page-header container">
-  <p class="eyebrow">{{ if eq .Section "posts" }}ARTICLE INDEX{{ else }}COLLECTION{{ end }}</p>
+  <p class="eyebrow">{{ if eq .Section "posts" }}{{ i18n "page.articleIndex" }}{{ else }}{{ i18n "page.collection" }}{{ end }}</p>
   <h1>{{ .Title }}</h1>
   {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  {{ with .Content }}<div class="page-header-content">{{ . }}</div>{{ end }}
 </section>
 
 <section class="section container">
@@ -10,7 +11,7 @@
     {{ range .Pages.ByDate.Reverse }}
       {{ partial "post-card.html" . }}
     {{ else }}
-      <p class="empty-state">这里还没有内容。</p>
+      <p class="empty-state">{{ i18n "common.empty" }}</p>
     {{ end }}
   </div>
 </section>

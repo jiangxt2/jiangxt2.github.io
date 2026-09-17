@@ -3,7 +3,8 @@
   <head>
     {{ partial "head.html" . }}
   </head>
-  <body>
+  {{ $background := resources.Get "images/hero-mythic-mountains.webp" }}
+  <body{{ with $background }} style="--site-background: url('{{ .RelPermalink }}')"{{ end }}>
     <a class="skip-link" href="#main-content">跳到正文</a>
     {{ partial "site-header.html" . }}
     <main id="main-content" class="site-main">

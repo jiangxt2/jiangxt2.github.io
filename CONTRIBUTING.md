@@ -1,4 +1,4 @@
-# Contributing
+# Contributing to 影神图
 
 ## Working copy
 
