@@ -25,11 +25,18 @@ hugo server --buildDrafts
 Build the complete site locally:
 
 ```bash
-hugo --gc --minify
-npm run build --prefix demos/vue-counter
+npm run build
 ```
 
 The generated site is written to `public/`. The Vue Demo is available at `/demos/vue-counter/` after the complete build.
+
+Preview the complete generated site locally:
+
+```bash
+npm run preview
+```
+
+Then open `http://localhost:1313/`. Stop the preview server with `Ctrl-C`.
 
 ## Deployment
 
