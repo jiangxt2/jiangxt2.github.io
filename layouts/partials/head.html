@@ -1,0 +1,15 @@
+{{ $pageTitle := .Site.Title }}
+{{ if not .IsHome }}{{ $pageTitle = printf "%s · %s" .Title .Site.Title }}{{ end }}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="author" content="{{ .Site.Params.author }}">
+<meta name="theme-color" content="#f7f8fa">
+<title>{{ $pageTitle }}</title>
+<link rel="canonical" href="{{ .Permalink }}">
+{{ with resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{ end }}
+{{ with .OutputFormats.Get "RSS" }}
+  <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }} RSS" href="{{ .Permalink }}">
+{{ end }}

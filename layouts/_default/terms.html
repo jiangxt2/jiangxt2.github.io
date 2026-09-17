@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="page-header container">
+  <p class="eyebrow">TAXONOMY</p>
+  <h1>{{ .Title }}</h1>
+</section>
+<section class="section container">
+  <div class="terms-list">
+    {{ range .Data.Terms.Alphabetical }}
+      <a class="term-card" href="{{ .Page.RelPermalink }}">
+        <strong>{{ .Page.Title }}</strong>
+        <span>{{ .Count }} 篇</span>
+      </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

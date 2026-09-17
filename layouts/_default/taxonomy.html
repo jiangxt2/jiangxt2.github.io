@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="page-header container">
+  <p class="eyebrow">TAXONOMY</p>
+  <h1>{{ .Title }}</h1>
+</section>
+<section class="section container">
+  <div class="post-list">
+    {{ range .Pages.ByDate.Reverse }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

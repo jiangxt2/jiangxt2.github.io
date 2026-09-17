@@ -1,0 +1,30 @@
+baseURL = 'https://jiangxt2.github.io/'
+locale = 'zh-CN'
+title = '江同学的技术笔记'
+theme = []
+enableRobotsTXT = true
+enableGitInfo = false
+
+[pagination]
+pagerSize = 6
+
+[params]
+author = 'jiangxt2'
+description = '记录技术文章、实验与开源项目。'
+tagline = '记录技术文章、实验与开源项目。'
+
+[permalinks]
+posts = '/posts/:year/:month/:day/:slug/'
+
+[taxonomies]
+tag = 'tags'
+category = 'categories'
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+style = 'github'

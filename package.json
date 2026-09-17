@@ -1,0 +1,9 @@
+{
+  "name": "jiangxt2-personal-site",
+  "private": true,
+  "scripts": {
+    "build": "hugo --gc --minify && npm run build:vue",
+    "build:vue": "npm run build --prefix demos/vue-counter",
+    "dev:vue": "npm run dev --prefix demos/vue-counter"
+  }
+}

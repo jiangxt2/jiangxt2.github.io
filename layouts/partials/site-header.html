@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ "/" | relURL }}" aria-label="返回首页">
+      <span class="brand-mark" aria-hidden="true">⌘</span>
+      <span>{{ .Site.Title }}</span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="{{ "/" | relURL }}" class="{{ if .IsHome }}is-active{{ end }}">首页</a>
+      <a href="{{ "/posts/" | relURL }}" class="{{ if eq .Section "posts" }}is-active{{ end }}">文章</a>
+      <a href="{{ "/demos/" | relURL }}" class="{{ if eq .Section "demos" }}is-active{{ end }}">Demo</a>
+      <a href="{{ "/about/" | relURL }}" class="{{ if eq .Section "about" }}is-active{{ end }}">关于</a>
+    </nav>
+  </div>
+</header>
