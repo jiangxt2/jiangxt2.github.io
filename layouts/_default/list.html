@@ -5,20 +5,21 @@
     {{ else if eq .Section "docs" }}{{ i18n "page.docs" }}
     {{ else if eq .Section "comparisons" }}{{ i18n "page.comparisons" }}
     {{ else if eq .Section "concepts" }}{{ i18n "page.concepts" }}
+    {{ else if eq .Section "examples" }}{{ i18n "page.examples" }}
     {{ else }}{{ i18n "page.collection" }}{{ end }}
   </p>
   <h1>{{ .Title }}</h1>
   {{ with .Description }}<p>{{ . }}</p>{{ end }}
   {{ with .Content }}<div class="page-header-content">{{ . }}</div>{{ end }}
-  {{ if in (slice "docs" "comparisons" "concepts") .Section }}
+  {{ if in (slice "docs" "comparisons" "concepts" "examples") .Section }}
     {{ partial "collection-nav.html" . }}
   {{ end }}
 </section>
 
 <section class="section container">
   {{ $pages := .Pages.ByDate.Reverse }}
-  {{ if in (slice "docs" "comparisons" "concepts") .Section }}
-    {{ $pages = where .Site.RegularPages "Section" "in" (slice "docs" "comparisons" "concepts") }}
+  {{ if in (slice "docs" "comparisons" "concepts" "examples") .Section }}
+    {{ $pages = where .Site.RegularPages "Section" "in" (slice "docs" "comparisons" "concepts" "examples") }}
     {{ $pages = $pages.ByDate.Reverse }}
   {{ end }}
   <div class="post-list" data-content-list data-initial-filter="{{ .Section }}">

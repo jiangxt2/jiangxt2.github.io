@@ -45,4 +45,4 @@ unsafe = true
 
 [markup.highlight]
 noClasses = false
-style = 'github'
+style = 'github-dark'

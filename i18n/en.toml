@@ -11,6 +11,8 @@
     other = 'PROJECT COMPARISONS'
   [page.concepts]
     other = 'CORE CONCEPTS'
+  [page.examples]
+    other = 'EXAMPLES'
   [page.all]
     other = 'ALL KNOWLEDGE'
 
@@ -25,6 +27,8 @@
     other = 'Cross-project compare'
   [collection.concepts]
     other = 'Core concepts'
+  [collection.examples]
+    other = 'Examples'
 
 [page.collection]
   other = 'COLLECTION'
