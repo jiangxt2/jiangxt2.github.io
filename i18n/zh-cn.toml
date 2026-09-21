@@ -11,6 +11,8 @@
     other = '项目对比'
   [page.concepts]
     other = '概念科普'
+  [page.examples]
+    other = '示例文档'
   [page.all]
     other = '全部内容'
 
@@ -25,6 +27,8 @@
     other = '跨项目对比'
   [collection.concepts]
     other = '概念科普'
+  [collection.examples]
+    other = '示例文档'
 
 [page.collection]
   other = '内容集合'

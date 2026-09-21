@@ -1,5 +1,6 @@
 {{ define "main" }}
-<article class="article container">
+{{ $hasTableOfContents := and .Params.toc .TableOfContents }}
+<article class="article container{{ if $hasTableOfContents }} article-with-toc{{ end }}">
   <header class="article-header">
     {{ with .Section }}<p class="eyebrow">{{ . | upper }}</p>{{ end }}
     <h1>{{ .Title }}</h1>
@@ -16,8 +17,22 @@
       </div>
     {{ end }}
   </header>
-  <div class="article-content">
-    {{ .Content }}
-  </div>
+  {{ if $hasTableOfContents }}
+    <div class="article-layout">
+      <aside class="article-toc" aria-label="{{ .Params.tocTitle }}">
+        <details open>
+          <summary>{{ .Params.tocTitle }}</summary>
+          {{ .TableOfContents }}
+        </details>
+      </aside>
+      <div class="article-content">
+        {{ .Content }}
+      </div>
+    </div>
+  {{ else }}
+    <div class="article-content">
+      {{ .Content }}
+    </div>
+  {{ end }}
 </article>
 {{ end }}

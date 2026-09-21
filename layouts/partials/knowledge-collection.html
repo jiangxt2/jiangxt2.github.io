@@ -10,7 +10,7 @@
 <section class="section container">
   <div class="post-list" data-content-list data-initial-filter="{{ $filter }}">
     {{ range .Site.RegularPages.ByDate.Reverse }}
-      {{ if or (eq .Section "docs") (eq .Section "comparisons") (eq .Section "concepts") }}
+      {{ if or (eq .Section "docs") (eq .Section "comparisons") (eq .Section "concepts") (eq .Section "examples") }}
         {{ partial "post-card.html" . }}
       {{ end }}
     {{ end }}

@@ -1,0 +1,5 @@
+{{- $group := .Get "group" | urlize -}}
+{{- $language := .Get "lang" | lower -}}
+<div class="code-example" data-code-example="{{ $group }}" data-language="{{ $language }}">
+{{ .Inner }}
+</div>
