@@ -23,10 +23,6 @@
     other = 'All'
   [collection.docs]
     other = 'Technical docs'
-  [collection.comparisons]
-    other = 'Cross-project compare'
-  [collection.concepts]
-    other = 'Core concepts'
   [collection.examples]
     other = 'Examples'
 

@@ -11,23 +11,22 @@
   <h1>{{ .Title }}</h1>
   {{ with .Description }}<p>{{ . }}</p>{{ end }}
   {{ with .Content }}<div class="page-header-content">{{ . }}</div>{{ end }}
-  {{ if in (slice "docs" "comparisons" "concepts" "examples") .Section }}
+  {{ if in (slice "docs" "examples") .Section }}
     {{ partial "collection-nav.html" . }}
   {{ end }}
 </section>
 
 <section class="section container">
   {{ $pages := .Pages.ByDate.Reverse }}
-  {{ if in (slice "docs" "comparisons" "concepts" "examples") .Section }}
-    {{ $pages = where .Site.RegularPages "Section" "in" (slice "docs" "comparisons" "concepts" "examples") }}
+  {{ if in (slice "docs" "examples") .Section }}
+    {{ $pages = where .Site.RegularPages "Section" "in" (slice "docs" "examples") }}
     {{ $pages = $pages.ByDate.Reverse }}
   {{ end }}
   <div class="post-list" data-content-list data-initial-filter="{{ .Section }}">
     {{ if gt (len $pages) 0 }}
       {{ range $pages }}{{ partial "post-card.html" . }}{{ end }}
-    {{ else }}
-      <p class="empty-state">{{ i18n "common.empty" }}</p>
     {{ end }}
+    <p class="empty-state" data-content-empty{{ if gt (len $pages) 0 }} hidden{{ end }}>{{ i18n "common.empty" }}</p>
   </div>
 </section>
 {{ end }}
