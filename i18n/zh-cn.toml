@@ -23,10 +23,6 @@
     other = '全部'
   [collection.docs]
     other = '技术文档'
-  [collection.comparisons]
-    other = '跨项目对比'
-  [collection.concepts]
-    other = '概念科普'
   [collection.examples]
     other = '示例文档'
 
