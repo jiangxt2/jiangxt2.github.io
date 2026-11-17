@@ -22,7 +22,11 @@
       <aside class="article-toc" aria-label="{{ .Params.tocTitle }}">
         <details open>
           <summary>{{ .Params.tocTitle }}</summary>
-          {{ .TableOfContents }}
+          {{ if .Params.tocEndLevel }}
+            {{ .Fragments.ToHTML 2 (int .Params.tocEndLevel) false }}
+          {{ else }}
+            {{ .TableOfContents }}
+          {{ end }}
         </details>
       </aside>
       <div class="article-content">
