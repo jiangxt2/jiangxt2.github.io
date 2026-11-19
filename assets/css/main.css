@@ -1639,6 +1639,113 @@ body[data-background="atlas"] .site-background-image-atlas {
   }
 }
 
+/* Pista integration-test execution flow */
+.article-content .pista-it-flow {
+  display: grid;
+  gap: 28px;
+  margin: 24px 0 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.pista-it-flow > li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 14px;
+  min-width: 0;
+  padding: 17px 20px;
+  border: 1px solid rgba(210, 164, 95, 0.25);
+  border-radius: 10px;
+  background: rgba(20, 19, 17, 0.88);
+}
+
+.pista-it-flow > li:not(:last-child)::after {
+  position: absolute;
+  bottom: -27px;
+  left: 35px;
+  color: var(--accent);
+  content: "↓";
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.pista-it-flow__number {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(210, 164, 95, 0.14);
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pista-it-flow__body {
+  min-width: 0;
+}
+
+.pista-it-flow__body > strong {
+  display: block;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.article-content .pista-it-flow__body > p {
+  margin: 5px 0 0;
+  color: #d7cbbb;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.pista-it-flow__branches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pista-it-flow__branches > div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(210, 164, 95, 0.16);
+  border-radius: 7px;
+  background: rgba(210, 164, 95, 0.055);
+  color: #d7cbbb;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.article-content .pista-it-flow__branches code {
+  width: fit-content;
+  color: var(--accent-dark);
+}
+
+@media (max-width: 600px) {
+  .pista-it-flow > li {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .pista-it-flow > li:not(:last-child)::after {
+    left: 22px;
+  }
+
+  .pista-it-flow__number {
+    width: 32px;
+    height: 32px;
+  }
+
+  .pista-it-flow__branches {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* CI scenario walkthroughs */
 .ci-scenario {
   margin: 20px 0 48px;
